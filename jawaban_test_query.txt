@@ -1,0 +1,9 @@
+1. SELECT b.peserta,b.gaji FROM kawahedukasi b 
+WHERE b.gaji IN (SELECT MAX(gaji) FROM kawahedukasi) a
+2. SELECT b.peserta,b.gaji,b.nilai FROM kawahedukasi b 
+WHERE b.gaji IN (SELECT MAX(gaji) FROM kawahedukasi WHERE kelas='BACKEND') a
+AND b.nilai IN (SELECT MAX(nilai) FROM kawahedukasi WHERE kelas='BACKEND') c
+3. SELECT COUNT(peserta) AS TOTAL_PESERTA FROM kawahedukasi WHERE kelas='FRONTEND'
+4. SELECT b.peserta,b.jumlah_kehadiran,b.nilai FROM kawahedukasi b 
+WHERE b.jumlah_kehadiran IN (SELECT MAX(jumlah_kehadiran) FROM kawahedukasi WHERE kelas='FRONTEND') a
+AND b.nilai IN (SELECT MAX(nilai) FROM kawahedukasi WHERE kelas='FRONTEND') c
